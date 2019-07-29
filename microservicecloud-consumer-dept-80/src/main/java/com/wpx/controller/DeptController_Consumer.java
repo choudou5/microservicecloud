@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,6 +28,8 @@ import com.wpx.pojo.Dept;
 @RequestMapping("/consumer/dept")
 public class DeptController_Consumer {
 
+	private Logger logger = LoggerFactory.getLogger(getClass());
+
 	//private static final String REST_URL_PREFIX = "http://localhost:8001";
 	private static final String REST_URL_PREFIX = "http://MICROSERVICECLOUD-DEPT";
 	
@@ -45,6 +49,7 @@ public class DeptController_Consumer {
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value="/list")
 	public List<Dept> list(){
+		logger.info("into consumer list");
 		return restTemplate.getForObject(REST_URL_PREFIX+"/dept/list", List.class);
 	}
 }

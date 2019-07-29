@@ -7,8 +7,8 @@
 	<packaging>pom</packaging>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>1.7</maven.compiler.source>
-		<maven.compiler.target>1.7</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
 		<junit.version>4.12</junit.version>
 		<log4j.version>1.2.17</log4j.version>
 		<lombok.version>1.16.18</lombok.version>
@@ -100,5 +100,6 @@
 		<module>microservicecloud-zuul-gateway-9527</module>
 		<module>microservicecloud-config-3344</module>
 		<module>mircoservicecloud-config-client-3355</module>
+		<module>microservicecloud-sleuth-server-9001</module>
 	</modules>
 </project>

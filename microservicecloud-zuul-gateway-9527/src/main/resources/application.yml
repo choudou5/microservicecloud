@@ -8,7 +8,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:7001/eureka
+      defaultZone: http://root:123456@localhost:7001/eureka
   instance:
     instance-id: gateway-9527.com
     prefer-ip-address: true  
@@ -19,6 +19,9 @@ zuul:
   routes:
     mydept.serviceId: microservicecloud-dept
     mydept.path: /mydept/**
+  SecondFilter:  #禁用过滤器
+    pre:
+      disable: true
 
 
 info: 
@@ -26,3 +29,7 @@ info:
   company.name: www.wpxcloud.xyz
   build.artifactId: $project.artifactId$
   build.version: $project.version$
+
+management:
+  security:
+    enabled: false
