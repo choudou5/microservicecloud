@@ -9,6 +9,7 @@ import zipkin.server.EnableZipkinServer;
 public class MicroservicecloudSleuthServer9001 {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(MicroservicecloudSleuthServer9001.class, args);
 	}
 

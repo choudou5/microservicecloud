@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +19,8 @@ import com.wpx.service.DeptService;
 @RestController
 @RequestMapping("/dept")
 public class DeptController {
+
+	private Logger logger = LoggerFactory.getLogger(getClass());
 
 	@Resource
 	private DeptService deptService;
@@ -35,6 +39,7 @@ public class DeptController {
 	
 	@RequestMapping(value="/list",method=RequestMethod.GET)
 	public List<Dept> list(){
+		logger.info("into provider-8001 list");
 		return deptService.list();
 	}
 	
